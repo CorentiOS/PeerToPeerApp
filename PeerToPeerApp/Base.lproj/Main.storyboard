@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PeerToPeerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G24-IB-guJ">
+                                <rect key="frame" x="186" y="60" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhj-gh-GEj">
+                                <rect key="frame" x="180" y="106" width="54" height="30"/>
+                                <state key="normal" title="Options"/>
+                                <connections>
+                                    <action selector="buttonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TTl-ko-3uL"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptt-i4-X10">
+                                <rect key="frame" x="20" y="152" width="374" height="311"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pnp-fv-M4R">
+                                <rect key="frame" x="20" y="473" width="315" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bmw-AH-Dxh">
+                                <rect key="frame" x="339" y="473" width="55" height="30"/>
+                                <state key="normal" title="Envoyer"/>
+                                <connections>
+                                    <action selector="pressOk:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2aS-Tj-2vP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Pnp-fv-M4R" firstAttribute="trailing" secondItem="ptt-i4-X10" secondAttribute="trailing" constant="-59" id="IhL-uq-dEF"/>
+                            <constraint firstItem="Pnp-fv-M4R" firstAttribute="leading" secondItem="ptt-i4-X10" secondAttribute="leading" id="KGW-Ar-MQ5"/>
+                            <constraint firstItem="Pnp-fv-M4R" firstAttribute="top" secondItem="ptt-i4-X10" secondAttribute="bottom" constant="10" id="L6G-AB-0yC"/>
+                            <constraint firstItem="Bmw-AH-Dxh" firstAttribute="leading" secondItem="Pnp-fv-M4R" secondAttribute="trailing" constant="4" id="Th2-iA-nah"/>
+                            <constraint firstItem="ptt-i4-X10" firstAttribute="top" secondItem="Zhj-gh-GEj" secondAttribute="bottom" constant="16" id="UM5-pa-abL"/>
+                            <constraint firstItem="ptt-i4-X10" firstAttribute="centerX" secondItem="Zhj-gh-GEj" secondAttribute="centerX" id="UTI-Xx-fZ1"/>
+                            <constraint firstItem="Zhj-gh-GEj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="160" id="Wh9-es-wC1"/>
+                            <constraint firstItem="ptt-i4-X10" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eJ7-dm-IoP"/>
+                            <constraint firstItem="Bmw-AH-Dxh" firstAttribute="centerY" secondItem="Pnp-fv-M4R" secondAttribute="centerY" constant="-2" id="gfN-S1-xbC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ptt-i4-X10" secondAttribute="bottom" constant="399" id="kiH-42-qjW"/>
+                            <constraint firstItem="Zhj-gh-GEj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="62" id="qHj-fV-bIu"/>
+                            <constraint firstItem="G24-IB-guJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="sOt-Tr-YE8"/>
+                            <constraint firstItem="G24-IB-guJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sT8-CV-p7Y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="labelText" destination="G24-IB-guJ" id="XrY-HF-aJs"/>
+                        <outlet property="sendTextBtn" destination="Bmw-AH-Dxh" id="lKp-Yb-G9e"/>
+                        <outlet property="textField" destination="Pnp-fv-M4R" id="Edd-kQ-bU6"/>
+                        <outlet property="textView" destination="ptt-i4-X10" id="J8R-3k-gch"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
