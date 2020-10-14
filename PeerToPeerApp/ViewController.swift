@@ -35,7 +35,7 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
             print("Pas connecté \(peerID.displayName)")
             DispatchQueue.main.async {
                 self.labelText.text = "Déconnecté"
-                self.textView.text += "\nLa connexion a été perdue"
+                self.textView.text += "\(peerID.displayName) a perdu la connexion"
                 
                 let refreshAlert = UIAlertController(title: "Information", message: "La connexion a été perdue", preferredStyle: UIAlertController.Style.alert)
                 
@@ -90,6 +90,7 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
         mcSession.delegate = self
         textField.returnKeyType = UIReturnKeyType.done
         textView.text = nil
+        
     }
     
     @IBAction func pressOk(_ sender: Any) {
@@ -130,5 +131,29 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
         action.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(action, animated: true)
     }
+    
+    
+//    @IBAction func changeNick(_ sender: Any) {
+//        //1. Create the alert controller.
+//        let alert = UIAlertController(title: "Choisir son pseudo", message: "", preferredStyle: .alert)
+//
+//        //2. Add the text field. You can configure it however you need.
+//        alert.addTextField { (textField) in
+//            textField.text = ""
+//        }
+//
+//        // 3. Grab the value from the text field, and print it when the user clicks OK.
+//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+//            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+//            print("Text field: \(textField?.text ?? "")")
+//             = textField?.text
+//        }))
+//
+//        // 4. Present the alert.
+//        self.present(alert, animated: true, completion: nil)
+//        
+//    }
+    
+    
 }
 
