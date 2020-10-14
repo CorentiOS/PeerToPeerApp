@@ -10,4 +10,5 @@ Demo video : https://streamable.com/rjfugz
 ## How to use the app ?
 
 One device have to create a session
+
 One device have to join the session by finding it in the list
