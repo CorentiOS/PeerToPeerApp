@@ -50,19 +50,10 @@
                                     <action selector="pressOk:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2aS-Tj-2vP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBS-4L-tW0">
-                                <rect key="frame" x="103" y="562" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="changeNick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3tf-SG-3Ig"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="SBS-4L-tW0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="103" id="6yK-23-1RG"/>
-                            <constraint firstItem="SBS-4L-tW0" firstAttribute="top" secondItem="Pnp-fv-M4R" secondAttribute="bottom" constant="55" id="GXg-Ey-maw"/>
                             <constraint firstItem="Pnp-fv-M4R" firstAttribute="trailing" secondItem="ptt-i4-X10" secondAttribute="trailing" constant="-59" id="IhL-uq-dEF"/>
                             <constraint firstItem="Pnp-fv-M4R" firstAttribute="leading" secondItem="ptt-i4-X10" secondAttribute="leading" id="KGW-Ar-MQ5"/>
                             <constraint firstItem="Pnp-fv-M4R" firstAttribute="top" secondItem="ptt-i4-X10" secondAttribute="bottom" constant="10" id="L6G-AB-0yC"/>
