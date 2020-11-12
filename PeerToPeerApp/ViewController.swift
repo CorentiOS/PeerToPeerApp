@@ -23,20 +23,21 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
         switch state {
-        case .connected:
+        case .connected: //Si on a pu se connecter a l'autre appareil
             print("Connecté : \(peerID.displayName)")
             DispatchQueue.main.async {
                 self.textView.text = ""
                 self.labelText.text = "Connecté à \(peerID.displayName)"
             }
-        case .connecting:
+        case .connecting: //Connexion en cours
             print("Connexion en cours : \(peerID.displayName)")
-        case .notConnected:
+        case .notConnected: //Erreur/perte de connexion
             print("Pas connecté \(peerID.displayName)")
             DispatchQueue.main.async {
                 self.labelText.text = "Déconnecté"
                 self.textView.text += "\(peerID.displayName) a perdu la connexion"
                 
+                //Alerte perte de connexion
                 let refreshAlert = UIAlertController(title: "Information", message: "La connexion a été perdue", preferredStyle: UIAlertController.Style.alert)
                 
                 refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default))
@@ -46,6 +47,7 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
             print("Etat inconnu : \(peerID.displayName)")
         }
         
+        //Si il y a un connecté alors on peut écrire
         DispatchQueue.main.async {
             if self.mcSession.connectedPeers.count == 0 {
                 self.sendTextBtn.isEnabled = false
@@ -92,15 +94,15 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
         textView.text = nil
         
     }
-    
+    //Envoyer un texte
     @IBAction func pressOk(_ sender: Any) {
         if textField.text != "" {
-            sendMsg = "\n\(localPeerID.displayName): \(textField.text!)\n"
+            sendMsg = "\n\(localPeerID.displayName): \(textField.text!)\n" //récupération du nom du telephone
             let message = sendMsg.data(using: String.Encoding.utf8, allowLossyConversion: false)
             
             do
             {
-                try self.mcSession.send(message!, toPeers: self.mcSession.connectedPeers, with: .reliable)
+                try self.mcSession.send(message!, toPeers: self.mcSession.connectedPeers, with: .reliable) //envoi du message
             }
             catch
             {
@@ -110,7 +112,7 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
             textField.text = ""
         }
     }
-    
+
     @IBAction func buttonAction(_ sender: Any) {
         let action = UIAlertController(title: "Connexion vers un appareil", message: nil, preferredStyle: .alert)
         
@@ -131,29 +133,6 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
         action.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(action, animated: true)
     }
-    
-    
-//    @IBAction func changeNick(_ sender: Any) {
-//        //1. Create the alert controller.
-//        let alert = UIAlertController(title: "Choisir son pseudo", message: "", preferredStyle: .alert)
-//
-//        //2. Add the text field. You can configure it however you need.
-//        alert.addTextField { (textField) in
-//            textField.text = ""
-//        }
-//
-//        // 3. Grab the value from the text field, and print it when the user clicks OK.
-//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
-//            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
-//            print("Text field: \(textField?.text ?? "")")
-//             = textField?.text
-//        }))
-//
-//        // 4. Present the alert.
-//        self.present(alert, animated: true, completion: nil)
-//        
-//    }
-    
     
 }
 
